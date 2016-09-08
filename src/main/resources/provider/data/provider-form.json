@@ -1,0 +1,77 @@
+[
+  {
+    "className": "col-md-12",
+    "fieldGroup": [
+      {
+        "key": "businessName",
+        "type": "input",
+        "className": "col-md-4",
+        "templateOptions": {
+          "type": "text",
+          "label": "Business Name",
+          "required": true
+        }
+      },
+      {
+        "key": "primaryPhoneNo",
+        "type": "input",
+        "className": "col-md-4",
+        "templateOptions": {
+          "type": "text",
+          "label": "Phone",
+          "required": true
+        }
+      },
+      {
+        "key": "email",
+        "type": "input",
+        "className": "col-md-4",
+        "templateOptions": {
+          "type": "email",
+          "label": "Email",
+          "required": true
+        }
+      }
+    ]
+  },
+  {
+    "className": "col-md-12",
+    "fieldGroup": [
+      {
+        "key": "address",
+        "type": "input",
+        "className": "col-md-8",
+        "templateOptions": {
+          "label": "Address",
+          "required": true,
+          "type": "text"
+        }
+      },
+      {
+        "key": "place",
+        "type": "input",
+        "className": "col-md-4",
+        "templateOptions": {
+          "type": "text",
+          "label": "Place",
+          "required": true
+        }
+      }
+    ]
+  },
+  {
+    "className": "col-md-12",
+    "fieldGroup": [
+      {
+        "key": "description",
+        "type": "richTextArea",
+        "className": "col-md-12",
+        "templateOptions": {
+          "label": "Business Description",
+          "required": true,
+          "type": "text"
+        }
+      }
+    ]
+  }
+]

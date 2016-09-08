@@ -1,0 +1,43 @@
+[{
+	"groupId": 1,
+	"name": "Group 1",
+	"services": [{
+		"id": "1",
+		"name": "Service 1",
+		"group": "1",
+		"appmtDuration": "20",
+		"notificationType": "Email"
+	}, {
+		"id": "2",
+		"name": "Service 3",
+		"group": "1",
+		"appmtDuration": "20",
+		"notificationType": "Email"
+	}]
+}, {
+	"groupId": 2,
+	"name": "Group 2",
+	"services": [{
+		"id": "3",
+		"name": "Service 2",
+		"group": "2",
+		"appmtDuration": "20",
+		"notificationType": "Email"
+	}, {
+		"id": "5",
+		"name": "Service 5",
+		"group": "2",
+		"appmtDuration": "20",
+		"notificationType": "Email"
+	}, {
+		"id": "7",
+		"name": "Service 7",
+		"group": "2",
+		"appmtDuration": "20",
+		"notificationType": "Email"
+	}]
+}, {
+	"groupId": 3,
+	"name": "Group 3",
+	"services": []
+}]

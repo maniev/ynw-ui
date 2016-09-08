@@ -1,0 +1,11 @@
+.page-tb{ padding: 0 0 0 0;border: 1px solid #ddd;min-height:42px;height:auto;width:100%;min-width:500px;transition: transform 0.3s ease-in-out, width 0.3s ease-in-out}
+.page-tb h1{color: #000; float: left; font-family: sans-serif; font-size: 16px; font-weight: bold; margin: 0 20px 0 0; padding: 10px 0 0 10px;}
+.page-tb h2{float: left;margin:0 0 0 5px;}
+/*.page-tb-left a{margin:5px 0 5px 5px}*/
+.page-tb-right a {margin:5px 0 5px 5px;float:right}
+.table-level-tb h2{float: left; }
+.page-tb-left{width:49%;float:left;height:41px;clear:both;}
+.page-tb-right{width:49%;float:right;height:41px;padding: 0 10px 0 0;}
+.page-tb-left h2{float: left;}
+.page-tb-right h2{float: right; margin:5px 8px 0 0;}
+.page-grid-tb button,.page-grid-tb input[type=text] {padding: 3px 5px 3px 5px}

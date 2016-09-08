@@ -1,0 +1,13 @@
+[
+                {"className":"col-sm-12","template":"<div></div>"},
+                {"key": "minApmtTime","className": "col-sm-12","type": "input",
+                 "templateOptions": {"label":"Minimum Appoinment time(in minutes) : 10","type": "text"}
+                },
+                {"key": "minLeadTimeOnline","className": "col-sm-12","type": "input",
+                 "templateOptions": {"label":"Minimum days before one can book appointment :2","type": "text"}
+                },
+                {"key": "onlineFutureTime","className": "col-sm-12","type": "input",
+                 "templateOptions": {"label":"Maximum days after one can book appointment to future : 15","type": "text"}
+                }
+
+            ]

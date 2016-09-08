@@ -1,0 +1,118 @@
+<div class="container no-padding provider consumer-dynamic-data">
+    <section>
+		<div class="global-bar-tab col-md-12 no-padding">
+			<div class="leftmenu pull-left">
+				<ul>
+					<!-- <li ng-class="{current: $location.path().indexOf('/home/appointments/')!=-1}"><a
+							class="appointments" href="#/home/appointments/today"><span>Appointments</span></a>
+					</li> -->
+					<li ng-class="{current: $location.path().indexOf('/home/waitlist')!=-1}"><a
+							class="waitlists" href="#/home/waitlist"><span>Waitlist</span></a>
+					</li>
+					<li ng-class="{current: $location.path().indexOf('/home/consumers/')!=-1}"><a
+							class="customers" href="#/home/consumers/today"><span>Customers</span></a></li>
+					<li ng-class="{current: $location.path().indexOf('/home/settings')!=-1}"><a
+							class="admin" href="#/home/settings"><span>Settings</span></a></li>
+				</ul>
+			</div>
+			<div class="listB pull-right">
+				<ul>
+					<li><a ng-click="createToken()" class="big-link"><img src="../assets/img/icon/dashboard/waitlist-new.png"><span> New WaitList</span></a></li>
+                    <li><a ng-click="newcustomer()" class="big-link"><img src="../assets/img/icon/ptb/sendall.png"><span> New Customer</span></a>
+					<!-- <li><a ng-click="" class="big-link"><img src="../assets/img/icon/ptb/sendall.png"><span> New Appointment</span></a></li> -->
+					 <!-- <li><a href="" ng-click="newcustomer()" class="btn btn-icon-only default btn tooltips" data-placement="bottom"
+                       data-original-title="Quick Luanch Button" uib-tooltip="Create Customer" tooltip-placement="top"
+                       tooltip-class="customClass">
+                        <i class="fa fa-user"></i>
+                    </a></li> -->
+					<!--<li><a href="" ng-click="alerts()" class="btn btn-icon-only default btn tooltips" data-placement="bottom"
+                       data-original-title="Quick Luanch Button" uib-tooltip="Create alert" tooltip-placement="top"
+                       tooltip-class="customClass">
+                        <i class="fa fa-user"></i>
+                    </a></li> -->
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	
+	
+	
+	
+        <!-- <div class="navbar navbar-inverse scrollclass nomarginb">
+            <div class="col-md-9 no-padding  provider-top-nav">
+				<div class="controlB">
+					
+					<div class="clear"></div>
+				</div>
+                <div class="navbar-collapse1">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li ng-class="{active4: $location.path().indexOf('/home/appointments/')!=-1}"><a
+                                href="#/home/appointments/today"><i class="fa fa-calendar"></i> Appointments</a>
+                        </li>
+						<li ng-class="{active4: $location.path().indexOf('/home/waitlist')!=-1}"><a
+                                href="#/home/waitlist"><i class="fa fa-calendar"></i> Waitlist</a>
+                        </li>
+                        <li ng-class="{active4: $location.path().indexOf('/home/consumers/')!=-1}"><a
+                                href="#/home/consumers/today"><i class="fa fa-user-md"></i> Consumers</a></li>
+                        <li ng-class="{active4: $location.path().indexOf('/home/settings')!=-1}"><a
+                                href="#/home/settings"><i class="fa fa-hospital-o"></i> Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 controlB">
+				<ul>
+					<li><a ng-click="" class="big-link"><img src="../assets/img/icon/ptb/sendall.png"><span> New WaitList</span></a></li>
+					<li><a href="" ng-click="newcustomer()" class="btn btn-icon-only default btn tooltips" data-placement="bottom"
+                       data-original-title="Quick Luanch Button" uib-tooltip="Create Customer" tooltip-placement="top"
+                       tooltip-class="customClass">
+                        <i class="fa fa-user"></i>
+                    </a></li>
+					<li><a href="" ng-click="alerts()" class="btn btn-icon-only default btn tooltips" data-placement="bottom"
+                       data-original-title="Quick Luanch Button" uib-tooltip="Create alert" tooltip-placement="top"
+                       tooltip-class="customClass">
+                        <i class="fa fa-user"></i>
+                    </a></li>
+				</ul>
+            </div>
+        </div> -->
+    </section>
+    <div class="container nopadding" ui-view></div>
+    <div class="container nopadding sub-content-view" ui-view="main"></div>
+    <div class="no-padding">
+        <!-- BEGIN PRE-FOOTER -->
+        <div class="page-prefooter">
+            <div class="container-fluid">
+                <div class="row">
+                   <!--  <div class="col-md-3 col-sm-6 col-xs-12 footer-block">
+                        <h2>Cancelled Requests</h2>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs12 footer-block">
+                        <h2>License Info</h2>
+                    </div> -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 footer-block">
+                        <h2></h2>
+                        <h2>Alerts Panel</h2>
+                            <marquee bgcolor="#e5e3e3" scrollamount="1" direction="up" loop="true" width="100%">
+                                <div class="row list-group" ng-repeat="row in alertList">
+                                    <div style="padding-left: 1cm;background-color:#e5e3e3"><a style="text-decoration: none" href="" ng-click="ackAlert(row.id,$index)">{{row.subject}}: {{row.text}}</a></div>
+                                </div>
+                            </marquee>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!--  <div class="page-prefooter page-prefooter-sub">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 footer-block">
+                        <h2>Support Info</h2>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs12 footer-block">
+                        <h2>Cloud Health Info</h2>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- END PRE-FOOTER -->
+    </div>
+</div>

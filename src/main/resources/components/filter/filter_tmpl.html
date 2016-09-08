@@ -1,0 +1,11 @@
+<div ng-controller="filterCtrl" class="filter-container" style="overflow:auto;">
+    <div>
+        <h2> <a rel="tooltip" ng-click="add()" class="btn btn3 btn_filter-new" title="Add filter"></a> </h2>
+    </div>
+    <div class="filter-content">
+        <div ng-repeat="fltr in filterList track by $index" style="float:left;">
+            <filter-input></filter-input>
+        </div>
+            <button class="stdbtn" ng-click="go()" ng-show="filterList.length>0">Go</button>
+    </div>
+</div>

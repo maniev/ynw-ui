@@ -1,0 +1,9 @@
+[{"key": "firstName","className":"col-sm-6","type": "input","templateOptions": {"type": "text","label":"First Name","required": true}},
+  {"key": "lastName","className":"col-sm-6","type": "input","templateOptions": {"type": "text","label": "LastName","required": true}},
+  {"key": "address","className":"col-sm-12","type": "input","templateOptions": {"type": "text","label": "Address","required": true}},
+  {"key": "age","className":"col-sm-2","type": "input","templateOptions": {"type": "text","label": "Age","required": true}},
+  {"key": "gender", "className":"col-sm-4","type": "radioType", "templateOptions": {"label": "Gender", "required": true,"options": [{"name": "Male","value": "male"}, {"name": "Female","value": "female"}]}},
+  {"key": "email","type": "input","className":"col-sm-6","templateOptions": {"type": "email","label":"Email","required": true}},
+  {"key": "primaryMobileNo","className":"col-sm-6","type": "input","templateOptions": {"type": "number","label":"Primary Mobile No","required": true}},
+  {"key": "alternativePhoneNo","className":"col-sm-6","type": "input","templateOptions": {"type": "number","label":"Alternative Phone No","required": true}}
+  ]

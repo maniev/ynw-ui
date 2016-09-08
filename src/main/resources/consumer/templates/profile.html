@@ -1,0 +1,17 @@
+<div class="content">
+	<div class="login-box">
+		<div class="login-box-body">
+			<p class="login-box-msg">Profile Information</p>
+			<div class="alert alert-success" ng-if="success">
+				<strong> {{message}}</strong>
+			</div>
+			<div class="alert alert-danger" ng-if="danger">
+				<strong>{{message}}</strong>
+			</div>
+			<formly-form model="cp.profileInfo" fields="cp.fields" form="consumer.cp.form">
+				<button type="submit" class="btn btn-standard" ng-disabled="consumer.cp.form.$invalid"  ng-click="cp.submit(cp.profileInfo)">Update</button>
+				<a href="#/home/dashboard"><button type="submit" class="btn btn-standard">Close</button></a>
+			</formly-form>
+		</div>
+	</div>
+</div>

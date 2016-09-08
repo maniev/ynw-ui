@@ -1,0 +1,4 @@
+[{"key": "loginId","type": "input","templateOptions": {"type": "email","label":"Email Address","required": true}},
+  {"key": "password","type": "input","templateOptions":{"type": "password","label":"Password","required": true}},
+  {"key": "keepme","type": "checkbox","templateOptions": { "label": "Keep me logged in" }}
+]

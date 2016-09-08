@@ -1,0 +1,58 @@
+<section class="row content col-md-12">
+    <div class="container-fluid nav-hidden form-bordered" style="background-color:#e6e6e6;border:2px solid #cccccc;padding:10px;">
+		<div style="height:100%" >
+			<div class="service-heading" style="float:left;font-size:30px;margin-top:6px">Staff</div>
+			 <div class="service-btns service-btn-only" style="float:right;margin-left:15px;"> 
+			<span style="cursor:pointer"><img src="../ynw/dist/img/add-btn.png" ng-click="newstaff()" >
+			<!-- <img src="../ynw/dist/img/icon/dashboard/search.png" ng-click="search()"> -->
+           	</div>
+		</div>
+	</div>
+	<div class="col-md-12 col-lg-12 nopadding" >
+		<div class="col-sm-12 list-group single-profile-top box-content" ng-repeat="row in stafflist">
+			<div class="clearfix no-padding" style="margin:auto;">
+				<div class="col-sm-2" style="margin: auto">
+					<span>{{row.userProfile.firstName}} {{row.userProfile.lastName}}
+					</p>
+				</div>
+				<div class="col-sm-2">
+					<span>{{row.userProfile.age}}</span></p>
+				</div>
+				<!-- <div class="col-sm-2">
+					<div class="col-sm-12">
+						<span>
+						   {{row.Role}}
+						</span>
+					</div>
+				</div> -->
+				<div class="col-sm-2">
+					<div class="col-sm-12">
+						<span>
+						   {{row.userProfile.primaryMobileNo}}
+						</span>
+					</div>
+				</div>	
+				<!-- <div class="col-sm-2">
+					<div class="col-sm-12">
+						<span>
+						   {{row.joineddate}}
+						</span>
+					</div>
+				</div>	 -->
+					<div class="col-sm-2">
+					<div class="col-sm-12">
+						<span>
+						    <span style="cursor:pointer"><img src="../ynw/dist/img/icon/ptb/view.png" ng-click="updatestaff(row)">
+							 <!--  <span style="cursor:pointer"><img src="../ynw/dist/img/icon/ptb/delete.png" ng-click="deletestaff(row.id)"> --> 
+						</span>
+					</div>
+			</div>
+				</div>
+				</div>
+             <div>
+			<h2 ng-show="showme"><a href="" ng-click="showme=false"><img class="small-image"
+				src="../components/groups/img/double-up-arrow.png"/></a></h2>
+			</div>
+		</div>
+	</div> 
+</section>

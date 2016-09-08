@@ -1,0 +1,36 @@
+<section class="content">
+    <div class="login-box">
+        <div class="login-box-body">
+            <p class="login-box-msg">Register a new membership</p>
+            <div class="alert alert-success" ng-if="success">
+                <strong>Signup Success!</strong> {{message}}
+            </div>
+            <div class="alert alert-danger" ng-if="danger"> 
+                <strong>{{message}}</strong>
+            </div>
+			<formly-form ng-if="stage=='signupStart'" model="vm.signupInfo" fields="vm.fields" form="provider.signup.form">
+                <div class="col-md-12">
+					<button type="submit" class="btn btn-block btn-flat buttonYnw-partial" ng-disabled="provider.signup.form.$invalid" ng-click="vm.startSignup()">Sign Up</button>
+				</div>
+            </formly-form>
+			<formly-form ng-if="stage=='otpGenerated'" model="vm.otpInfo" fields="vm.otpfield" form="consumer.signup.otp.form">
+                <button class="btn btn-block btn-flat buttonYnw-partial" ng-disabled="consumer.signup.otp.form.$invalid"
+                        ng-click="vm.otpVerify()">Continue
+                </button>
+            </formly-form>
+			<formly-form ng-if="stage=='setCredentials'" model="vm.credentialInfoC" fields="vm.credentialfields" form="consumer.signup.credentials.form">
+				<button class="btn btn-block btn-flat buttonYnw-partial" ng-disabled="consumer.signup.credentials.form.$invalid" 
+				ng-click="vm.completeRegistration()">Register
+				</button>
+			</formly-form>
+			
+			<div style="margin-top: 15px;text-align:center">
+				<span class="" style="-webkit-font-smoothing: antialiased; font-size: 11px; font-weight: normal; text-align: center; transition: opacity 0.2s linear; color: rgb(170, 170, 170); width: 224px;"><span>Creating an account means you’re okay with YouNeverWait's <a href="#/terms">Terms of Service</a>, <a href="#/privacy">Privacy Policy</a></span></span>
+			</div> 
+			<div style="text-align:center">
+				<div style="border-bottom: 1px solid rgb(222, 222, 222); margin: 5px auto; width: 110px;"></div>
+				<div><h5 style="color: rgb(90, 90, 90); font-weight: 500; font-size: 12px;">Already a member?</h5><a href="#/login"><button class="btn-primary buttonYnw-full"  type="button" style="width: 40%; ">Sign in</button></a></div>
+			</div>
+        </div>
+    </div>
+</section>

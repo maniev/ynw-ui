@@ -1,0 +1,79 @@
+<!-- ASIDE NAV -->
+<!-- <div class="col-md-3 col-lg-2 nopadding">
+	<aside class="">
+		<div class="aside-nav">
+			<ul class="ConsumerLMenuCtrl">
+				<li ng-class="{active3: $location.path() == '/home/appointments/today'}"><a href="#/home/appointments/today">Today</a></li>
+				<li ng-class="{active3: $location.path() == '/home/appointments/tomorrow'}"><a href="#/home/appointments/tomorrow">Tomorrow</a></li>
+				<li ng-class="{active3: $location.path() == '/home/appointments/week'}"><a href="#/home/appointments/week">This week</a></li>
+				<li ng-class="{active3: $location.path() == '/home/appointments/past'}"><a href="#/home/appointments/past">Past</a></li>
+			</ul>
+		</div>
+	</aside>
+</div> -->
+<div class="content" class="row">
+    <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">Appointments</div>
+        <div class="service-btns col-sm-6 col-md-6 ">
+			<div class="listB pull-right">
+				<ul>
+					<!-- <li><a ng-click="" class="big-link"><img src="../assets/img/icon/dashboard/today.png"><span> Today</span></a></li>
+					<li><a ng-click="addDelay()" class="big-link"><img src="../assets/img/icon/dashboard/tomorrow.png"><span>Tomorrow</span></a></li>
+					<li><a ng-click="" class="big-link"><img src="../assets/img/icon/dashboard/week.png"><span> Week</span></a></li>
+					<li><a ng-click="" class="big-link"><img src="../assets/img/icon/dashboard/past.png"><span> Past</span></a></li> -->
+					<li><a ng-click="toggleFilter()" class="big-link"><img src="../assets/img/icon/dashboard/filter.png"><span> Filter</span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+    </div>
+	<div class="clearfix"></div>
+	
+    <div class="nav-hidden form-bordered container">
+	<div ng-if="showFilter" class="filter-main">
+	<filters></filters>
+	</div>
+		<div class="clearfix"></div>
+			<div class="row no-padding-small list-group single-profile-top box-content" ng-repeat="row in appointments" ng-click="toggleRow(row)">
+				<div class="col-md-12 col-lg-12 no-padding" >
+					<div class="clearfix no-padding" style="margin:auto;">
+						<div class="col-sm-4 no-padding" style="margin: auto">
+							<div class="col-sm-12 no-padding lead" ng-class="{active:type=='upcoming'}" ng-if="row.time">
+								<p><span class="time"> {{row.time}}</span> <span class="date">- {{row.date}}</span></p>
+
+								<p ng-if="type=='upcoming'" class="countdown" countdown="" date="{{row.date_time}}"></p>
+
+							</div>
+						</div>
+						<div class="col-sm-8 no-padding" style="margin: auto">
+							<div class="col-sm-12 lead no-padding">
+								<div class="col-sm-9 clearfix no-padding">
+									<div class="image col-sm-32 no-padding" style="float:left;height:60px;width:60px">
+										<img src="../assets/img/noimage.png" style="height:50px;width:50px" alt="Cancel Appointment">
+									</div>
+									<div class="col-sm-9 no-padding">
+										<p class="title"><span><a href="">{{row.name}}</a></span> <span style="color:firebrick" class="fa normal" ng-if="row.reference">- {{row.reference}}</span> </p>
+
+										<p class="normal">
+											<span class="fa fa-mobile "><a class="number" style="color:black"> {{row.mobile}}</a></span>
+											<span><a href="{{row.map}}" target="_blank"><img class="small-image" src="../assets/img/map-icon.png" /></a></span> <span><a href="" ng-click="showme=true"><img class="small-image"
+																																																						src="../assets/img/double-down-arrow.png"/></a></span></p>
+									</div>
+								</div>
+								<div class="col-sm-3 no-padding" style="">
+									<img ng-if="type=='upcoming'" src="../assets/img/cal-remove.png" style="height:25px;width:25px"
+										 alt="{{row.address}}">&nbsp;
+									<img ng-if="type=='upcoming'" src="../assets/img/cal-reschedule.png" style="height:25px;width:25px"
+										 alt="{{row.address}}">&nbsp;
+									<img src="../assets/img/cal-new.png" style="height:25px;width:25px">
+								</div>
+							</div>
+						</div>
+					</div>
+				<div><h2 ng-show="showme"><a href="" ng-click="showme=false"><img class="small-image"
+					src="../assets/img/double-up-arrow.png"/></a><span class="fa fa-location-arrow" ng-if="row.address"> {{row.address}}</span></h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

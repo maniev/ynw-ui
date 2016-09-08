@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>YouNeverWait</title>
+    <link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/components-rounded.css"/>
+    <link rel="stylesheet" href="../assets/css/color.css"/>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+	<link rel="stylesheet" href="../vendors/angular/ui-select/select.min.css"/>
+</head>
+<body ng-controller="ProviderController">
+<div class="container no-padding">
+	<div class="header col-md-12">
+		<img src="../assets/img/logo.png" />
+		<div class="pull-right">
+			<ul class="nav navbar-nav navbar-right" ng-if="user">
+                <li class="btn-group" uib-dropdown keyboard-nav><a>
+                    <span uib-dropdown-toggle> {{user}} <span class="caret" ></span></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                        <li ui-sref-active="active"><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
+                        <li ui-sref-active="active"><a href="#/change-password"><i class="fa fa-key"></i> Change Password</a></li>
+                        <li ui-sref-active="active"><a href="#/logout" href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+		</div>
+	</div>
+    <!-- <div class="">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">YouNeverWait</a>
+        </div>
+        <div class="navbar-collapse collapse" ng-if="user">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-group" uib-dropdown keyboard-nav><a>
+                    <span uib-dropdown-toggle> {{user}} <span class="caret" ></span></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+                        <li ui-sref-active="active"><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
+                        <li ui-sref-active="active"><a href="#/change-password"><i class="fa fa-key"></i> Change Password</a></li>
+                        <li ui-sref-active="active"><a href="#/logout" href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+</div>
+<!--END STATS SECTION-->
+<div  class="container no-padding consumer-dynamic-data" ui-view></div>
+<!--FOOTER SECTION -->
+<div class="container for-full-back" id="footer">
+    &copy; 2015-16; www.youneverwait.com | All Right Reserved | by:<a href="http://netvarth.com" target="_blank"
+                                                            style="color:#fff">www.netvarth.com</a>
+</div>
+<!-- END FOOTER SECTION -->
+</body>
+<script src="../vendors/require/require.js" data-main="config.js"></script>
+</html>

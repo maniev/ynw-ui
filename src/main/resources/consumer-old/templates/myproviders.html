@@ -1,0 +1,27 @@
+<div class="content col-md-12 col-sm-12 col-lg-12 no-padding" class="row">
+	<div class="col-sm-12 list-group single-profile-top box-content" ng-repeat="row in providers">
+		<div class="content-section left-align no-padding">
+			<div class="">
+				<div class="list-group-image" >
+					<img src="../assets/img/noimage.png" style="height:100%;width:100%" alt="Cancel Appointment">
+				</div>
+				<div class="left-align" style="padding-left:5px;">
+					<p class="title"><span><a href="">{{row.name}}</a></span></p>
+					<p>
+					<span class="normal"><span class="fa fa-location-arrow" ng-if="row.address"> {{row.address}}</span>
+						<span class="fa fa-mobile"> {{row.mobile}}</span>
+					</span>
+					</p>
+
+
+					<p class="normal"><span class="fa">Last visit : 2 days ago</span>
+						<span><img class="small-image" src="../assets/img/map-icon.png"/></span>
+						<span><img class="small-image"	src="../assets/img/double-down-arrow.png"/></span>
+						<span><img class="small-image" style="height:20px;width:20px" src="../assets/img/cal-new.png"/></span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>

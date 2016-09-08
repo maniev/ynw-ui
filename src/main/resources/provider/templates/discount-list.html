@@ -1,0 +1,51 @@
+<div class="content" class="row" ui-view>
+    <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">Discounts</div>
+        <div class="service-btns service-btn-only col-sm-6 col-md-6">
+            <a href="javascript:;" ng-click="createDiscount()" class="btn btn-icon-only red btn tooltips"
+               data-placement="bottom" data-original-title="Quick Launch Button">
+                <i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="nav-hidden form-bordered container">
+        <div class="col-md-12 col-lg-12 nopadding">
+            <div class="row hidden-xs list-group-title single-profile-top box-content">
+                <div class="col-border-right col-sm-2" style="margin: auto">
+                    <p class="title"><span>Discount</span>
+                </div>
+                <div class="col-sm-2 col-border-right " style="margin: auto">
+                    <p class="title"><span>Value</span>
+                </div>
+                <div class="col-sm-6 col-border-right " style="margin: auto">
+                    <p class="title"><span>Services</span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="pull-right">
+                        &nbsp;
+                    </span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row list-group single-profile-top box-content" ng-repeat="row in discounts">
+                <div class="col-sm-2" >
+                    <p class="title"><span style=" float:left" class="visible-xs">Discount </span><span>{{row.name}}</span>
+                </div>
+                <div class="col-sm-2">
+                    <p class="title"><span style="float:left" class="visible-xs">Value </span>
+                    <span ng-if="row.discValue!=0" ng-show="row.calculationType=='Fixed'">Rs.{{row.discValue}}/-</span>
+                    <span ng-if="row.discValue!=0" ng-show="row.calculationType=='Percentage'">{{row.discValue}}%</span>
+                </div>
+                <div class="col-sm-6" >
+                    <p class="title"><span style="float:left" class="visible-xs">Services </span><span></span>
+                </div>
+                <div class="col-sm-2">
+                    <span class="pull-right">
+                      <a href="#/home/settings/business/features/apm/discount/{{row.id}}"><img src="../assets/img/icon/ptb/view.png"></a>
+                        <a><img src="../assets/img/icon/ptb/delete.png" ng-click="deleteDiscount(row.id,$index)"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

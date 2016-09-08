@@ -1,0 +1,18 @@
+<section class="content">
+	<div class="login-box">
+		<div class="login-box-body">
+			<p class="login-box-msg">Sign in to start your session</p>
+			<div ng-messages="userForm.$error">
+				<p ng-show="loginError" class="error">{{loginError}}</p>
+			</div>
+			<formly-form model="vm.login" fields="vm.fields" form="vm.forms.login" ng-enter="vm.submit(vm.login)">
+				<button type="submit" ng-disabled="vm.forms.login.$invalid" class="btn  btn-block btn-flat buttonYnw-partial" ng-click="vm.submit(vm.login)" data-dismiss="modal">Sign in</button>
+			</formly-form>
+			<div style="margin-top: 15px;margin-bottom:15px;text-align:center;"><a href="#/forgot-password" style="color:#000;">Forgot your password?</a></div>
+			<div style="text-align:center">
+				<div style="border-bottom: 1px solid rgb(222, 222, 222); margin: 5px auto; width: 110px;">&nbsp;</div>
+				<div><h5 style="color: rgb(90, 90, 90); font-weight: 500; font-size: 12px;">New to YouNeverWait?</h5><a href="#/register"><button class="btn-primary buttonYnw-full"  type="button" style="width: 40%; ">Sign up</button></a></div>
+			</div>
+		</div>	
+	</div>
+</section>

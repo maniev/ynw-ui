@@ -1,0 +1,77 @@
+[{
+  "className": "col-md-12", "key": "firstName", "type": "input",
+  "templateOptions": {"type": "text", "label": "First Name", "required": true}
+},
+  {
+    "className": "col-md-12", "key": "lastName", "type": "input",
+    "templateOptions": {"type": "text", "label": "Last Name", "required": true}
+  },
+  {
+    "className": "col-md-12", "key": "primaryPhone", "type": "input",
+    "templateOptions": {"type": "text", "label": "Phone Number", "required": true}
+  },
+  {
+    "className": "col-md-12", "key": "email", "type": "input",
+    "templateOptions": {"type": "email", "label": "Email", "required": true}
+  },
+  {
+    "className": "col-md-12",
+    "key": "confirmEmail",
+    "optionsTypes": ["matchField"],
+    "type": "input",
+    "templateOptions": {"type": "email", "label": "Confirm Email", "required": true},
+    "data": {
+      "fieldToMatch": "email",
+      "matchFieldMessage": "$viewValue + ' does not match ' + options.data.modelToMatch.email"
+    }
+  },
+  {
+    "className": "col-md-12", "key": "password", "type": "input",
+    "templateOptions": {
+      "type": "password", "label": "Password", "minlength": "8", "required": true,
+      "pattern": "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}",
+      "patternValidationMessage": "***Must have atleast one uppercase letter , atleast one number and minimum 8 characters"
+    }
+  },
+  {
+    "className": "col-md-12",
+    "key": "confirmPassword",
+    "optionsTypes": ["matchField"],
+    "type": "input",
+    "templateOptions": {"type": "password", "label": "Confirm Password", "required": true},
+    "data": {"fieldToMatch": "password"}
+  },
+  {
+    "className": "col-md-12", "key": "businessName", "type": "input",
+    "templateOptions": {"type": "text", "label": "Business Name"}
+  },
+  {
+    "className": "col-md-6", "key": "serviceSector", "type": "select", "templateOptions": {
+    "label": "Service Sector", "ngOptions": "option[to.valueProp] as option in to.options",
+    "options": serviceSectors, "valueProp": "id", "labelProp": "name"
+  }
+  },
+  {
+    "className": "col-md-6", "key": "subServiceSector", "type": "select", "templateOptions": {
+    "label": "Sub Sector", "valueProp": "id", "labelProp": "name", "options": []
+  },
+    controller: function ($scope) {
+  $scope.$watch('model.serviceSector', function (newValue, oldValue) {
+  if (newValue != oldValue) {
+  $scope.to.options = getSubServiceSectors(newValue);
+}
+})
+}
+},
+  {
+    "className": "col-md-12", "key": "licenseSelect", "type": "select",
+    "templateOptions": {
+      "label": "License", "options": [{"name": "Free", "value": "FREE"}, {
+        "name": "Iron",
+        "value": "IRON"
+      }, {"name": "Silver", "value": "SILVER"}, {
+        "name": "Gold",
+        "value": "GOLD"
+      }, {"name": "Platinum", "value": "PLATINUM"}]
+    }
+  }]

@@ -1,0 +1,28 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{hcc.title}}</h4>
+            </div>
+            <div class="alert alert-success" ng-if="success">
+                <strong>{{message}}</strong> 
+            </div>
+            <div class="alert alert-danger" ng-if="danger">
+                <strong>{{message}}</strong>
+            </div>
+            <div class="modal-body row" novalidate>
+                <formly-form model="hcc.holidayInfo" fields="hcc.fields" form="hcc.holiday.form">
+                </formly-form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-standard" ng-disabled="hcc.holiday.form.$invalid"
+                            ng-click="hcc.submit(hcc.holidayInfo)">Save
+                    </button>
+                    <button class="btn btn-standard" ng-click="close()" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

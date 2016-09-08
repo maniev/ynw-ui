@@ -1,0 +1,59 @@
+<div>
+<div class="col-md-2 col-sm-12 col-lg-2 no-padding nv-top-sub nav navbar-nav"> 
+	<ul class="nav navbar-nav navbar-left bottom-up ">
+		<li ng-class="{active4: $location.path().indexOf('/home/appointments/upcoming')!=-1}"><a
+            href="#/home/appointments/upcoming"><i class="fa fa-calendar"></i>Upcoming</a></li>
+		<li ng-class="{active4: $location.path().indexOf('/home/appointments/past')!=-1}"><a
+			href="#/home/appointments/past"><i class="fa fa-calendar"></i>Past</a></li>
+
+	</ul>
+</div>
+ <div class="content col-md-10 col-sm-12 col-lg-10 no-padding" class="row">
+	<!-- <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">Appointments</div>
+        <div class="service-btns col-sm-6 col-md-6">
+            <a href="javascript:;" ng-model="collapsed" ng-click="collapsed=!collapsed" class="btn btn-icon-only red btn tooltips"
+               data-placement="bottom" data-original-title="Show Filters">
+                <i class="fa fa-filter"></i></a>
+        </div>
+		<div class="grid-filter col-xs-12 nopadding" ng-show="collapsed" >
+            <filters filter-options="filterOptions" operator-options="operatorOptions" ></filters>
+        </div>
+    </div> -->
+	<div class="col-sm-12 list-group single-profile-top box-content" ng-repeat="row in appointments">
+		<div class="timings-section left-align" style="margin: auto">
+			<div class="no-padding lead" ng-class="{active:type=='upcoming'}" ng-if="row.time">
+				<p><span class="time"> {{row.time}}</span> <span class="date">- {{row.date}}</span></p>
+				<p ng-if="type=='upcoming'" class="countdown" countdown="" date="{{row.date_time}}"></p>
+			</div>
+		</div>
+		<div class="content-section left-align no-padding">
+			<div class="">
+				<div class="list-group-image" >
+					<img src="../assets/img/noimage.png" style="height:100%;width:100%" alt="Cancel Appointment">
+				</div>
+				<div class="left-align" style="padding-left:5px;">
+					<p class="title"><span><a href="">{{row.name}}</a></span>
+						<!-- <span style="color:firebrick" class="fa normal"
+							  ng-if="row.reference">- {{row.reference}}</span> -->
+					</p>
+					<p class="normal"><span class="fa fa-location-arrow" ng-if="row.address"> {{row.address}}</span>
+						<span class="fa fa-mobile "><a class="number" style="color:black"> {{row.mobile}}</a></span>
+						<span><img class="small-image" src="../assets/img/map-icon.png"/></span> <span><img
+								class="small-image"
+								src="../assets/img/double-down-arrow.png"/></span></p>
+				</div>
+				<span class="pull-right">  
+				   <a href="javascript:;" ng-click="assignLabel()" class="btn btn-icon-only default btn tooltips" data-placement="bottom" data-original-title="Remove Appointment">
+					<i class="fa fa-remove"></i></a>
+					<a href="javascript:;" ng-click="assignLabel()" class="btn btn-icon-only default btn tooltips" data-placement="bottom" data-original-title="Edit Appointment">
+					<i class="fa fa-edit"></i></a>
+					<a href="javascript:;" ng-click="assignLabel()" class="btn btn-icon-only default btn tooltips" data-placement="bottom" data-original-title="Take Appointment">
+					<i class="fa fa-plus"></i></a>					
+				</span> 
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+ </div>
+</div>

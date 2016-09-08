@@ -1,0 +1,37 @@
+<div class="col-sm-12 list-group single-profile-top box-content" ng-repeat="row in items">
+    <div class="clearfix no-padding" style="margin:auto;">
+        <div class="col-sm-4 no-padding" style="margin: auto">
+            <div class="col-sm-12 no-padding lead" ng-class="{active:type=='upcoming'}" ng-if="row.time">
+                <p><span class="time"> {{row.time}}</span> <span class="date">- {{row.date}}</span></p>
+
+                <p ng-if="type=='upcoming'" class="countdown" countdown="" date="{{row.date_time}}"></p>
+
+            </div>
+        </div>
+        <div class="col-sm-8 no-padding" style="margin: auto">
+            <div class="col-sm-12 lead no-padding">
+                <div class="col-sm-9 clearfix no-padding">
+                    <div class="image col-sm-32 no-padding" style="float:left;height:60px;width:60px">
+                        <img src="../base/dist/img/noimage.png" style="height:50px;width:50px" alt="Cancel Appointment">
+                    </div>
+                    <div class="col-sm-9 no-padding">
+                        <p class="title"><span><a href="">{{row.name}}</a></span> <span style="color:firebrick" class="fa normal" ng-if="row.reference">- {{row.reference}}</span> </p>
+
+                        <p class="normal"><span class="fa fa-location-arrow" ng-if="row.address"> {{row.address}}</span>
+                            <span class="fa fa-mobile "><a class="number" style="color:black"> {{row.mobile}}</a></span>
+                            <span><img class="small-image" src="../base/dist/img/map-icon.png"/></span> <span><img class="small-image"
+                                    src="../base/dist/img/double-down-arrow.png"/></span></p>
+                    </div>
+                </div>
+                <div class="col-sm-3 no-padding" style="">
+                    <img ng-if="type=='upcoming'" src="../base/dist/img/cal-remove.png" style="height:25px;width:25px"
+                         alt="{{row.address}}">&nbsp;
+                    <img ng-if="type=='upcoming'" src="../base/dist/img/cal-reschedule.png" style="height:25px;width:25px"
+                         alt="{{row.address}}">&nbsp;
+                    <img src="../base/dist/img/cal-new.png" style="height:25px;width:25px" alt="{{row.address}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

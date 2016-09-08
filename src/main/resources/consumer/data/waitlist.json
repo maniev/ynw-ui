@@ -1,0 +1,21 @@
+[{
+	"waitlistId":1,
+	"provider": {
+		"name": "Adv.Gopal",
+		"place": "Thrissur"
+	},
+	"waitlistedOn": "2016-07-29",
+	"lastVisitedDate": "2016-07-29",
+	"appxWaitingTime": 30,
+	"noOfNotifications": 3
+}, {
+	"waitlistId":2,
+	"provider": {
+		"name": "Dr.Dipan",
+		"place": "Thrissur"
+	},
+	"waitlistedOn": "2016-07-29",
+	"lastVisitedDate": "2016-07-29",
+	"appxWaitingTime": 30,
+	"noOfNotifications": 3
+}]

@@ -1,0 +1,35 @@
+<section class="content" class="row" >
+    <div class="container-fluid nav-hidden form-bordered" style="background-color:#e6e6e6;border:2px solid #cccccc;padding:10px;">
+		<div style="height:100%" >
+			<div class="service-heading" style="float:left;font-size:15px;font-weight:bold">SCHEDULE</div>
+			<div class="service-btns service-btn-only" style="float:right;margin-left:15px;">
+				<a href="javascript:;" ng-click="newSchedule()" class="btn btn-icon-only red btn tooltips" data-placement="bottom" data-original-title="Quick Luanch Button">
+				<i class="fa fa-plus"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 col-lg-12 nopadding" >
+		<div class="col-sm-12 list-group single-profile-top box-content" ng-repeat="row in scheduleItems">
+			<div class="clearfix no-padding" style="margin:auto;">
+				<div class="col-sm-4 no-padding" style="margin: auto">
+					<p class="title">
+						<span><i class="fa fa-leaf"></i> {{row.Staff}}</span>
+					</p>
+				</div>
+				<div class="col-sm-4 no-padding">
+					<p class="title"><span><a href="">{{row.Schedule}}</a></span></p>
+				</div>
+				<div class="col-sm-4 no-padding">
+					<p class="title"><span><a href="">{{row.Service}}</a></span></p>
+				</div>
+				<div class="col-sm-4 no-padding">
+					<span><a href="" ng-click="showme=true"><img class="small-image" src="../components/groups/img/double-down-arrow.png"/></a></span>
+				</div>
+			</div>
+			<div>
+			<h2 ng-show="showme"><a href="" ng-click="showme=false"><img class="small-image"
+				src="../components/groups/img/double-up-arrow.png"/></a><span class="fa fa-location-arrow" ng-if="row.address"> {{row.address}}</span></h2>
+			</div>
+		</div>
+	</div>
+</section>

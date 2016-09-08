@@ -1,0 +1,7 @@
+{
+  "count":"2",
+  "list":[
+    {"id": "1","name":"Lavanya Banquet Halls", "location":"Cochin",  "mobile":"9605551784","enddate":"Fri, 01 Jan 2016 11.30 AM","startdate":"Wed, 30 Dec 2015 11 AM","type":"Banquet Hall"},
+    {"id": "2","name":"Safari Tours & Travels", "location":"Thrissur","mobile":"1234567890","enddate":"Fri, 01 Jan 2016 11.30 AM","startdate":"Wed 30 Dec 2015 11 AM","type":"Bus"}
+  ]
+}

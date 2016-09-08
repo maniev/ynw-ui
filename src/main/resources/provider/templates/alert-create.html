@@ -1,0 +1,26 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Create alert</h4>
+			</div>
+			<div class="modal-body row ">
+				<div class="alert alert-success" ng-if="success">
+				  <strong>{{message}}</strong> 
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				<formly-form model="pm.alertInfo" fields="pm.fields">
+				</formly-form>
+			</div>
+			<div class="modal-footer">
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-standard"  ng-click="pm.submit()" >Add Alert</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

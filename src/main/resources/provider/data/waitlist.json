@@ -1,0 +1,7 @@
+[
+    {"id": "1","name":"Gopika Varma", "partySize":2,"waitTime":"30 mins", "service":"Service One", "date":"20-08-2016","status":"WaitListed","notifycount":"2"},
+    {"id": "2","name":"Sindhu Joy", "partySize":0,"waitTime":"1 hr 30 min", "service":"Service Two","date":"20-08-2016","status":"Done"},
+	{"id": "3","name":"Miranda", "partySize":1,"waitTime":"3 hrs 30 min", "service":"Service One","date":"20-08-2016","status":"Cancelled - No showup"},
+	{"id": "4","name":"Sonia Mathew", "partySize":1,"waitTime":"4 hrs", "service":"Service Three","date":"20-08-2016","status":"Done"},
+	{"id": "5","name":"Meera Ramakrishnan", "partySize":2,"waitTime":"7 hrs 30 min", "service":"Service Three","date":"20-08-2016","status":"Done"}
+]

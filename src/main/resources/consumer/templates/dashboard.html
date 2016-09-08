@@ -1,0 +1,56 @@
+<div class="content">
+	<uib-accordion close-others="oneAtATime">
+		<div uib-accordion-group class="panel-default" heading="Current Waitlist" is-open="true" is-disabled="false">
+			<div class="nav-hidden form-bordered col-xs-12">
+				<div ng-if="showFilter" class="filter-main">
+					<filters></filters>
+				</div>
+				<div class="row no-padding list-group single-profile-top box-content" ng-repeat="row in waitList" ng-click='viewWL(row.waitlistId)'>
+					<div class="col-xs-12">
+						<div class="col-border-right col-xs-9" style="margin: auto;padding-top:10px;">
+							<p class="title vcenter"><span>{{row.provider.name}}</span> - <span>{{row.provider.place}}</span></p>
+						</div>
+						<div class="col-border-right col-xs-3 no-padding-small" style="margin: auto">
+							<div class="listB">
+								<ul>
+									<li><a class="big-link"><img src="../assets/img/icon/ptb/email.png">({{row.noOfNotifications}})</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="col-border-right col-xs-8 no-padding-small" style="margin: auto">
+							<p class="title vcenter"><span><img src="assets/img/icon/ptb/wait-time.png"/><span >{{row.appxWaitingTime}} mins</span></span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div uib-accordion-group class="panel-default" heading="Previous Waitlist" is-open="false" is-disabled="false">
+			<div class="nav-hidden form-bordered col-xs-12">
+				<div ng-if="showFilter" class="filter-main">
+					<filters></filters>
+				</div>
+				<div class="row no-padding list-group single-profile-top box-content" ng-repeat="row in waitList" ng-click="viewWL(row.waitlistId)">
+					<div class="col-xs-12">
+						<div class="col-border-right col-xs-9" style="margin: auto;padding-top:10px;">
+							<p class="title vcenter"><span>{{row.provider.name}}</span> - <span>{{row.provider.place}}</span></p>
+						</div>
+						<div class="col-border-right col-xs-3 no-padding-small" style="margin: auto">
+							<div class="listB">
+								<ul>
+									<li><a class="big-link"><img src="../assets/img/icon/ptb/email.png">({{row.noOfNotifications}})</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="col-border-right col-xs-8 no-padding-small" style="margin: auto">
+							<p class="title vcenter"><span><img src="assets/img/icon/ptb/wait-time.png"/><span >{{row.appxWaitingTime}} mins</span></span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</uib-accordion>
+</div>

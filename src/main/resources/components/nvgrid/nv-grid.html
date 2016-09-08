@@ -1,0 +1,29 @@
+<div id="tabs" class="tabs" style="width:100%;">
+	<link href="components/nvgrid/nvgrid.css" rel="stylesheet">
+	<div class="page-tb">
+		<div  class="page-grid-tb page-tb-left">
+			<a  ng-repeat="btn in actions" rel="tooltip" class="btn btn3 btn_{{btn.class}}" ng-click="call(btn)" ></a>
+		</div>
+	</div>
+	<style>
+		.gridStyle {
+			border: 1px solid rgb(212,212,212);
+			height: 334px;
+		}
+
+		@media (min-width:768px)
+		{.gridStyle{
+			width:100%;
+			margin:auto;
+		}}
+	</style>
+	<div class="gridStyle" ng-grid="options"></div>
+	<!--<div class="page-tb">
+		<div class="page-grid-tb page-tb-right">
+			&lt;!&ndash;<div style="float:right; padding:10px 3px;color:#f1f1f1;">Showing<span style="padding:10px 3px;"ng-bind="start"></span>to<span style="padding:10px 3px;" ng-bind="to"></span>of<span style="padding:10px 3px;" ng-bind="count"></span>
+			</div>&ndash;&gt;
+		</div>
+	</div>-->
+    <link rel="stylesheet" href="components/nvgrid/ng-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="base/lib/jquery/jquery-ui.css"/>
+</div>

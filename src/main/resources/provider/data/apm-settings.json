@@ -1,0 +1,36 @@
+[
+	{
+        "name": "appointment",
+        "title": "Appointment",
+        "icon": "calendar",
+        "href": "#/home/settings/business/features/apm/appointments"
+      },
+      {
+        "name": "servicegrp",
+        "title": "Service Group",
+        "icon": "cogs",
+        "href": "#/home/settings/business/features/apm/service_group"
+      },
+      {
+        "name": "servicelocation",
+        "title": "Service Location",
+        "icon": "location-arrow",
+        "href": "#/home/settings/business/features/apm/service_location"
+      },
+       {
+        "name": "discount",
+        "title": "Discount",
+        "icon": "tag",
+        "href": "#/home/settings/business/features/apm/discount"
+      },
+       {
+        "name": "service",
+        "title": "Services",
+        "icon": "cog",
+        "href": "#/home/settings/business/features/apm/service"
+      }
+
+
+
+
+]

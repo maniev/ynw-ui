@@ -1,0 +1,45 @@
+<div class="modal fade cancelWl ">
+	<div class="modal-dialog ">
+		<div class="modal-content row">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{cwlc.title}}</h4>
+			</div>
+			<div class="modal-body row clearfix">
+				<div class="alert alert-success" ng-if="success">
+				  <strong>{{message}}</strong> 
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				
+				<div class="col-md-12">
+					<p>Do you want to cancel the waitlist of <b>{{cwlc.waitlistInfo.name}}</b> for <b>{{cwlc.waitlistInfo.service}}</b></p>
+					
+					<div class="col-md-12 controlB">
+						<ul>
+							<li><a ng-click="" class="big-link"><img src="../assets/img/icon/dashboard/absent.png"><span> No showup</span></a></li>
+							<li><a  class="big-link" ><img src="../assets/img/icon/dashboard/busy.png"><span> Too busy</span></a></li>
+							<li><a  class="big-link" ><img src="../assets/img/icon/dashboard/closing.png"><span> Closing soon</span></a></li>
+							<li><a  class="big-link"><img src="../assets/img/icon/dashboard/blocked.png"><span>Blocked</span></a></li>
+						</ul>				
+						<br/>
+						<formly-form model="cwlc.cancelWlInfo" fields="cwlc.fields" form="cwlc.form">
+						</formly-form>
+						
+					</div>
+					<div class="col-md-12">
+						<button class="btn btn-standard"  ng-click="adjustDelay()">Save</button>
+						<button class="btn btn-standard"  ng-click="close()" >Close</button>
+					</div>
+				</div>
+			</div>
+			<div class-="modal-footer">
+				<div class="col-md-12">
+						<p class="error">Note:- System will send this message to your customer</p>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>

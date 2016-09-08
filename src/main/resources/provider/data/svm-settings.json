@@ -1,0 +1,21 @@
+[
+      {
+        "name": "servicegrp",
+        "title": "Service Group",
+        "icon": "cogs",
+        "href": "#/home/settings/business/features/svm/service_group"
+      },
+      {
+        "name": "servicelocation",
+        "title": "Service Location",
+        "icon": "location-arrow",
+        "href": "#/home/settings/business/features/svm/service_location"
+      },
+       
+       {
+        "name": "service",
+        "title": "Services",
+        "icon": "cog",
+        "href": "#/home/settings/business/features/svm/service"
+      }
+]

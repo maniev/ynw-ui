@@ -1,0 +1,38 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{dcc.title}}</h4>
+            </div>
+            <div class="alert alert-success" ng-if="success">
+                <strong>{{message}}</strong> 
+            </div>
+            <div class="alert alert-danger" ng-if="danger">
+                <strong>{{message}}</strong>
+            </div>
+            <div class="modal-body row" novalidate>
+                <formly-form model="dcc.discountInfo" fields="dcc.fields" form="newdiscount.dcc.form" ng-keypress="change($event)">
+                </formly-form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-standard" ng-disabled="newdiscount.dcc.form.$invalid"   ng-click="dcc.submit(dcc.discountInfo)">Save</button>
+
+                   <button class="btn btn-standard" ng-click="close()" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

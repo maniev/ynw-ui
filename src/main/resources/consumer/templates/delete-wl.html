@@ -1,0 +1,28 @@
+<div class="modal fade cancelWl">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{wldc.title}}</h4>
+			</div>
+			<div class="modal-body row clearfix">
+				<div class="alert alert-success" ng-if="success">
+				  <strong>{{message}}</strong> 
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				
+				<div class="col-md-12">
+					<p>Do you want to cancel the waitlist of <b>{{wldc.waitlistInfo.name}}</b></p>
+					
+					<div class="col-md-12">
+						<button class="btn btn-standard"  ng-click="">Yes</button>
+						<button class="btn btn-standard"  ng-click="close()" >No</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

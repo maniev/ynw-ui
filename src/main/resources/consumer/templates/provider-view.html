@@ -1,0 +1,52 @@
+<div class="search-results col-xs-12 no-padding">    
+	<div class="col-xs-12 no-padding">
+		<img ng-if="src.bp.logo.url" ng-src="{{src.bp.logo.url}}" style="height:100px;width:100%" alt="">
+	</div>
+	<div class="col-xs-12 search-bus-info">
+		<div class="bus-name">{{src.bp.businessName}}<span ng-if="src.bp.place" class="fa fa-location-arrow"> {{src.bp.place}}</span></div>
+		<div class="bus-phone"><span class="fa fa-mobile"> {{src.bp.primaryPhoneNo}}</span>
+			<span ng-if="src.bp.secondaryPhoneNo" style="padding-left:10px" class="fa fa-phone"> {{src.bp.secondaryPhoneNo}}</span>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="global-bar-tab tab-provider-view ">
+	 <uib-tabset active="activeJustified" justified="true">
+		<uib-tab index="0" heading="Services">
+			<div class="col-xs-12 services-list" ng-repeat="service in src.services">	
+				<div class="col-xs-8 service-info">
+					<div class="bus-name">{{service.name}}</div>
+					<div class="bus-desc">{{service.description}}</div>
+					<div class="wait-time"><img src="assets/img/icon/ptb/wait-time.png"/><span >{{service.waitTime}} 1 hr</span></div>
+				</div>
+				<div class="col-xs-4 service-info">
+					<div class="no-padding"><button ng-click="showAddToWL(service,src.bp)" class="btn btn-standard btn-col" style="max-width:120px;float:right"><span  ng-if="service.bType=='Waitlist'">Add to </span><span ng-if="service.bType=='Appointment'">Take </span>{{service.bType}}</button></div>
+				</div>
+			</div>	
+		</uib-tab>
+		<uib-tab index="1" heading="Gallery">
+			<div class="col-xs-12 no-margin gallery">
+				<div class="col-xs-12 no-padding">
+					<div class="slider">
+					  <!-- enumerate all photos -->
+						 <img style="width:100%;height:100%;" ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.url}}" />
+						 <!-- prev / next controls -->
+						 <a class="arrow prev"  ng-click="showPrev()"></a>
+						 <a class="arrow next"  ng-click="showNext()"></a>
+						 <!-- extra navigation controls -->
+						 <ul class="nav hidden-xs" >
+							 <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+								 <img ng-src="{{photo.url}}" alt="{{photo.caption}}" title="{{photo.caption}}" ng-click="showPhoto($index);" />
+						   </li>
+						 </ul>
+					</div>
+				</div>
+			</div>
+		</uib-tab>
+		<uib-tab index="2" heading="About Us">
+			<div class="bus-addr" ng-if="src.bp.address"><span class="fa fa-home"> {{src.bp.address}}</span></div>
+			<div class="col-xs-12 bus-desc">{{src.bp.businessDesc}}</div>	
+		</uib-tab>
+	  </uib-tabset>
+	</div>
+	
+</div>

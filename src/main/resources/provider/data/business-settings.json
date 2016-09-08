@@ -1,0 +1,27 @@
+[
+      {
+        "name": "customers",
+        "title": "Customers",
+        "icon": "users",
+        "href": "#/home/settings/business/customers"
+      },
+      {
+        "name": "features",
+        "title": "Features",
+        "icon": "star",
+        "href": "#/home/settings/business/features"
+      },
+     
+	  {
+        "name": "profile",
+        "title": "Profile",
+        "icon": "user",
+        "href": "#/home/settings/business/bprofile"
+      },
+      {
+        "name": "sps",
+        "title": "Service Providers",
+        "icon": "archive",
+        "href": "#/home/settings/business/SPs"
+      }
+]

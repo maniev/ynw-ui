@@ -1,0 +1,23 @@
+.btn_filter{ background-image: url(img/filter.png); }
+.btn_filter-new { background-image: url(img/new-filter.png); }
+a.btn_delete {background:url(img/delete.png) no-repeat;}
+a.btn3 { width: 32px; height: 32px; }
+a.btn {
+    display: inline-block; border: 1px solid #ccc; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; font-weight: bold;
+  /*   background-color: #f7f7f7; */
+    -moz-box-shadow: 1px 1px 2px #eee; -webkit-box-shadow: 1px 1px 2px #eee; box-shadow: 1px 1px 2px #eee; color: #666;
+}
+a.btn span {
+    padding: 5px 10px; margin-left: 35px; display: block; background: #fff url(img/buttonbg.png) repeat-x 0 -31px; border-left: 1px solid #ccc;
+    text-shadow: 1px 1px #fff;
+}
+/*.stdbtn {
+    font-weight: bold; padding: 7px 10px; border: 1px solid #ccc; background: #eee url(img/buttons.png) repeat-x top left; color: #333;
+    -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; cursor: pointer; margin:4px 0 0 5px;
+}*/
+.stdbtn-add:hover { text-decoration: none; background: #eee url(img/buttons.png) 0 -114px repeat-x; color: #fff; }
+/* .filter-container{border-top: 1px solid #fff;} */
+.filter-container h2{float: left;margin:3px 5px 5px 5px;clear: both}
+.filter-container select{height:30px;margin-top:5px;}
+.filter-container input{height:30px;margin-top:5px;}
+.filter-container .stdbtn{padding:4px 10px;float: left;margin-top:4px;}

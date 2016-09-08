@@ -1,0 +1,65 @@
+<div class="content view-content ">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <uib-accordion close-others="oneAtATime">
+                    <uib-accordion-group heading="Basic Information" is-open="true">
+                        <div class="col-md-12">
+                            <div class="col-md-5">
+                                <formly-form model="bp.bpInfo" options="bp.options" fields="bp.fieldsLeft" form="bp.form" novalidate>
+                                </formly-form>
+                            </div>  
+                            <div class="col-md-6">
+                                <formly-form model="bp.sLInfo" options="bp.options" fields="bp.fieldsRight" form="bp.form" novalidate>
+                                </formly-form>
+                            </div> 
+                            <div class="col-md-1">
+                                <p><button class="btn btn-standard shadow-button" ng-click="updateBasic()">Edit</button></p>
+                            </div>
+                             <!-- <div class="col-md-1">
+                            <button type="submit" style="margin-top:10px;" class="btn btn-standard shadow-button"
+                            ng-click="bp.submit(bp.profileInfo)">Edit
+                            </button> 
+                            </div>  -->  
+                        </div>
+
+                    </uib-accordion-group>
+                    <!-- <uib-accordion-group heading="Business Schedule" is-open="true">
+                        <div class="col-md-12">
+                            <div class="col-md-11">
+                                {{businessSchedule}}
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" style="margin-top:10px;" class="btn btn-standard shadow-button"
+                                ng-click="bp.submit(bp.profileInfo)">Edit
+                                </button> 
+                            </div>
+                        </div>  
+                       <formly-form model="bp.sLInfo" options="bp.options" fields="bp.fields2" form="bp.form" novalidate>
+                        </formly-form> 
+                    </uib-accordion-group> -->
+                    <uib-accordion-group heading="Gallery">
+
+                        <div class="col-md-12 no-padding">
+                            <div class="image-container-wrapper col-md-12 no-padding">
+                                <div class="image-container col-md-12 no-padding">
+                                    <div class="imagebox" ng-repeat="image in bp.galleryInfo">
+                                        <img class="thumbnail" ng-src="{{image.url}}"/>
+                                        <span class="preview">
+                                            <a ng-click="bp.remove($index,image.url)" class="x" style="text-decoration:none;">x</a>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button class="btn btn-standard shadow-button" ng-click="updateImages()">Add more images
+                                        </button> 
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                    </uib-accordion-group>
+                </uib-accordion>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class=" filterComponent_$index" style="float:left">
+    <select ng-change="setValues(fltr)" ng-model="fltr.name"
+            ng-options="option.value as option.name for option in filters"
+            style="width: 110px;padding-right:0px;margin-right: 0px;"></select>
+    <select ng-model="fltr.operator" ng-show="fltr.name!=''"
+            ng-options="option.value as option.name for option in operators"
+            style="width: 42px;padding-left:0px;margin-left: -5px;"></select>
+    <input ng-if="type=='String'" ng-click="inputSelected(fltr.name);"
+           uib-typeahead="value for value in valueList | filter:$viewValue | limitTo:8" ng-model="fltr.value"
+           style="width:130px;margin-left:-5px;"/>
+    <input ng-if="type=='Date'" style="width: 130px;padding-right:0px;margin-right: 0px;margin-left: -5px;" type="date"
+           datepicker-popup ng-model="fltr.value" is-open="status.opened" min-date="minDate" max-date="maxDate"
+           datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+
+    <h2 style="padding-left:0px;float:right;margin-left: -0px;" ng-show="fltr.name!=''">
+        <a rel="tooltip" ng-click="remove($index)" class="btn btn3 btn_delete" title="Remove filter"></a>
+    </h2>
+</div>

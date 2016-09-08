@@ -1,0 +1,26 @@
+<div class="col-xs-12 nopadding ">
+    <div class="grid-row-bar col-xs-12 nopadding">
+        <h2 ng-repeat="btn in actions">
+            <a rel="tooltip" class="btn btn3 btn_{{btn.class}}" ng-click="call(btn)"></a>
+        </h2>
+    </div>
+    <div class="grid-content">
+        <table style="width:100%"  class="table table-striped" wt-responsive-table>
+            <thead>
+            <tr>
+                <th ng-repeat="col in cols">
+                    {{col.displayName}}
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in items" ng-class="{'selected':isRowSelected($index)}" ng-click="setClickedRow(row,$index)">
+                    {{row}}
+                <td ng-repeat="col in cols" >
+                    {{row[col.field]}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

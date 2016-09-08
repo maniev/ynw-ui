@@ -1,0 +1,46 @@
+<div class="col-sm-12 profile-list single-profile-top box-content" ng-repeat="row in items">
+    <div class="clearfix no-padding" style="margin:auto;">				
+		<div class="col-sm-12 no-padding" style="margin: auto">
+            <div class="col-sm-7 lead no-padding">
+                <div class="col-sm-12 no-padding">
+                    <p class="title"><span><a href="">{{row.name}}</a></span></p>
+					<div class="image col-sm-32 no-padding" style="float:left;height:60px;width:60px">
+						<img src="../components/groups/img/noimage.png" style="height:50px;width:50px" alt="Cancel Appointment">
+					</div>
+                    <p class="normal"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tortor odio, pretium non ultrices quis, luctus eget ligula. Nulla aliquet vestibulum enim quis tincidunt.</span>     
+					<p>&nbsp;</p>
+					<p class="imagecollection"><span>
+					<img src="../components/groups/img/arrowleft.png" style="height:50px;width:50px">
+					</span>
+					&nbsp;<img src="../components/groups/img/facial.jpg" style="height:120px;width:120px">
+					&nbsp;<img src="../components/groups/img/makeup.jpg" style="height:120px;width:120px">
+					&nbsp;<img src="../components/groups/img/hair.jpg" style="height:120px;width:120px">
+					&nbsp;<img src="../components/groups/img/arrowright.png" style="height:50px;width:50px">
+					</p>
+				</div>
+            </div>
+			<div class="col-sm-2 no-padding" style="">
+				<div class="col-sm-12 no-padding">
+					<img src="../components/groups/img/verticalline.png" style="height:400px;width:150px">
+				</div>
+			</div>	
+           
+			<div class="col-sm-3 no-padding" style="">
+				<div class="col-sm-12 no-padding">
+					<p class="mobile"><span class="fa fa-mobile "><a class="number" style="color:black"> {{row.mobile}}</a></span></p>
+					<p class="email"><span>snowwhitebc@gmail.com</span></p>
+					<p class="website"><span><a href="#">www.snowwhitebeauty.com</a></span></p>
+					<p>&nbsp;</p>
+					<p class="address"><span>{{row.address}}</span></p>
+					<p>&nbsp;</p>
+					<div class="businesshours">
+						<p class="title" style="font-weight:bold">Business Hours</p>
+						<p class="weekdays">Mon-Fri 9:00am to 5:00pm</p>
+						<p class="weekends">Saturday & Sunday Closed.</p>
+						<p><button type="button" class="btn btn-primary btn-md" ng-click="enteruser()">TAKE APPOINTMENT</button></p>
+					</div>
+				</div>
+			</div>
+		</div>	
+    </div>		
+</div>

@@ -1,0 +1,8 @@
+{
+  
+  "list":[
+    {"id":"1","Discount": "Discount1", "Value":"50","Services":"Service1"},
+    {"Discount": "Discount2", "Value":"10","Services":"Service2"},
+    {"Discount": "Discount3", "Value":"100","Services":"Service3"}
+
+  ]}

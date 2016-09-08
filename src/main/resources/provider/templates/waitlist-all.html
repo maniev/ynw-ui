@@ -1,0 +1,45 @@
+<div class="content" class="row">
+    <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">All WaitList</div>
+        <div class="service-btns col-sm-6 col-md-6 ">
+			<div class="listB pull-right">
+				<ul>
+					<li><a ng-click="changeStatus()" class="big-link"><img src="../assets/img/icon/ptb/change.png"><span>Change Status</span></a></li>
+					<li><a ng-click="doneWL()" class="big-link"><img src="../assets/img/icon/dashboard/ready.png"><span>Done</span></a></li>
+					<li><a ng-click="communicateWaitlist()" class="big-link"><img src="../assets/img/icon/ptb/email.png"><span>Communicate</span></a></li>
+					<li><a ng-click="toggleFilter()" class="big-link"><img src="../assets/img/icon/dashboard/filter.png"><span>Filter</span></a></li>
+					<li><a href="#/home/waitlist" class="big-link"><img src="../assets/img/icon/ptb/back.png"><span>Back</span></a></li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	<div class="clearfix"></div>
+    <div class="nav-hidden form-bordered container">
+		<div ng-if="showFilter" class="filter-main">
+		<filters></filters>
+		</div>
+           <div class="clearfix"></div>
+			<div class="row no-padding-small list-group single-profile-top box-content" ng-repeat="row in waitList" ng-click="toggleRow(row)">
+				<div class="col-border-right  col-sm-4 no-padding-small col-md-4" style="margin: auto">
+                    <p class="title vcenter"><span>{{row.name}}({{row.partySize}})</span></p>
+                </div>
+				<div class="col-border-right  col-sm-3 no-padding-small col-md-3" style="margin: auto">
+                    <p class="title vcenter"><span>{{row.service}}</span></p>
+                </div>
+				<div class="col-border-right col-sm-1 no-padding-small col-md-1" style="margin: auto">
+					<div class="listB"">
+						<ul>
+							<li tooltip-class="sticky-note" uib-tooltip><a ng-click="getNotes" class="big-link"><img src="../assets/img/icon/ptb/stickynote.png"><span> Notes</span></a></li>
+						</ul>
+					</div>
+                </div>
+                <div class="col-border-right col-sm-3 no-padding-small  col-md-3" style="margin: auto">
+					<p class="title vcenter"><span>{{row.status}}</span></p>
+                </div>
+                <div class="col-sm-1 no-padding-small col-md-1">
+					<p class="title vcenter"><span>{{row.notifycount}}</span></p>			
+				</div>
+            </div>
+        </div>
+    </div>
+</div>

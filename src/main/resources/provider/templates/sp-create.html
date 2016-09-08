@@ -1,0 +1,187 @@
+<div class="modal fade sp">
+ <div class="modal-dialog" style="min-width:55%;">
+  <div class="modal-content" >
+   <div class="modal-header" >
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">{{title}}</h4>
+   </div>
+   <div class="modal-body" novalidate>
+	<div class="alert alert-success" ng-if="success">
+	  <strong> {{message}}</strong>
+	</div>
+	<div class="alert alert-danger" ng-if="danger">
+	  <strong>{{message}}</strong>
+	</div>
+    <uib-tabset active="active">
+     <uib-tab heading="Basic Info">
+      <div class="container-fluid no-padding" style="padding:15px;border:2px solid #e6e6e6;background-color:white;">
+       <formly-form model="npsc.details.basicInfo" fields="npsc.fields" form="npsc.form.bi"></formly-form>
+      </div>
+    </uib-tab>
+    <uib-tab heading="Additional Info" disable="npsc.form.bi.$invalid">
+     <div class="container-fluid" style="padding:15px;border:2px solid #e6e6e6;background-color:white;">
+      <formly-form model="npsc.details.additionalInfo" fields="npsc.addInfo" form="npsc.form.ai"></formly-form>
+     </div>
+    </uib-tab>
+    <uib-tab heading="Schedule" disable="npsc.form.bi.$invalid">
+     <div class="container-fluid" style="padding:15px;border:2px solid #e6e6e6;background-color:white;">
+      <form>
+       <input id="bSch" type="radio" name="schedule" ng-model="sch.scheduleType" value="Business">
+        <label for="bSch">Business Schedule <b>({{businessSchedule}})</b></label>
+        <div class="col-md-12" style="margin-top:5px;color:red">
+			<p>If this provider works different from business schedule, click custom schedule</p>
+        </div>
+        <br/>
+        <input id="cSch" type="radio" name="schedule" ng-model="sch.scheduleType" value="Custom">
+        <label for="cSch">Custom Schedule</label>
+        <div class="col-md-12">
+         <div ng-show="sch.scheduleType == 'Custom'">
+          <div class="col-md-12" style="border:1px solid #d9d9d9;padding:15px;">
+           <div class="col-md-12">
+		    Working Schedule &nbsp;
+		    <input id="weekly" type="radio" name="customSch" ng-model="sch.customSch" value="Weekly">
+		    <label for="weekly">Weekly</label> &nbsp;
+		    <input id="monthly" type="radio" name="customSch" ng-model="sch.customSch" value="Monthly">
+		    <label for="monthly">Monthly</label>
+		    <div class="col-md-12 no-padding" style="margin-top:15px;">
+		     <div class="col-md-12 no-padding" ng-show="sch.customSch == 'Weekly'">
+		      <div class="left-align" style="font-weight:bold">Repeat On </div>
+			  <div ng-repeat="item in daysList" class="dayItem">
+			   <input type="checkbox" id="dayItem" value="{{item.value}}" ng-checked="selectedDays.indexOf(item.id) > -1" ng-click="addDaysToSelection(item.id)"><label for="dayItem">{{item.value}}</label>
+			  </div>
+			  <div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+			   <formly-form model="npsc.details.schedule" fields="npsc.weeklySchFields" form="newstaff.npsc.form.schedule"></formly-form>
+			   <button class="shadow-button" ng-click="addWeeklySchedule(npsc.details.schedule)" style="float:right;"> Add </button>	
+			  </div>	 
+		     </div>
+		     <div class="col-md-12 no-padding" ng-show="sch.customSch == 'Monthly'">
+			  Type &nbsp;
+			  <input id="dm" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dm">
+			  <label for="dm">Day of the Month</label> &nbsp;
+			  <input id="dw" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dw">
+			  <label for="dw">Day of the Week</label>
+			  <div class="col-md-12 no-padding" ng-show="monthlyOp == 'dm'">
+			   <div class="col-md-12 no-padding" style="margin-top:8px;margin-bottom:10px;">
+			    <formly-form model="npsc.details.dom" fields="npsc.sch_DOM_Fields" form="newlabel.npsc.form"></formly-form>
+			    <button class="shadow-button" ng-click="addSlot_DOM(npsc.details.dom)" style="float:right;">Add</button>
+			   </div>
+		      </div>
+			  <div class="col-md-12 no-padding" ng-show="monthlyOp == 'dw'">
+			   <div class="col-md-12 no-padding" style="margin-top:10px;margin-bottom:15px;">
+			    <div class="col-md-2"><input class="form-control" type="number" id="repeatNo" ng-model="npsc.details.dow.repeatNo"></div>
+			    <div class="left-align" style="font-weight:bold">Repeat on</div>
+			    <div ng-repeat="item in daysList" class="dayItem">
+			     <input type="checkbox" value="{{item.value}}" ng-checked="selectedDaysInWeek.indexOf(item.id) > -1" ng-click="addDaysToWeekSelection(item.id)"/><label for="dayItem">{{item.value}}</label>
+			    </div>
+			    <div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+			     <formly-form model="npsc.details.dow" fields="npsc.sch_DOW_Fields" form="newlabel.npsc.form"></formly-form>
+				 <button class="shadow-button" ng-click="addSlot_DOW(npsc.details.dow)" style="float:right;">Add</button>
+			    </div>
+			   </div>	
+		      </div>
+			 </div>
+		    </div>
+		   </div>
+		  </div>
+		  <table class="table table-striped table-bordered">
+			   <thead><tr><th>Schedules</th></tr></thead>
+			   <tbody><tr ng-repeat="timespecStr in timespecsStr">   
+			     <td>{{timespecStr}}</td>  
+			     <td><input type="button" value="D" ng-click="removeWeeklySchedule($index)"/></td>
+			    </tr></tbody></table>
+         </div>
+        </div>
+       </form>
+      </div>
+     </uib-tab>
+	 
+	 <uib-tab heading="Services" disable="npsc.form.bi.$invalid">
+	  <div class="container-fluid" style="padding:15px;border:2px solid #e6e6e6;background-color:white;">
+		<div class="col-md-12" ng-repeat="serviceByGrp in servicesByGrps" ng-hide="serviceByGrp.services.length == 0">
+			<span ng-repeat="group in groups" ng-if="serviceByGrp.groupId == group.id">{{group.name}}</span>
+			<div class="col-md-12">
+				<div class="col-md-3" ng-repeat="serviceIngrp in serviceByGrp.services">
+					<label ><input ng-if="serviceIngrp.status=='Active'" name="isServiceSelected" type="checkbox" ng-change="serviceSelect(isServiceSelected,serviceIngrp)" ng-model="isServiceSelected">&nbsp;{{serviceIngrp.name}}</label>
+				</div>
+			</div>
+		</div>
+	  </div>
+	 </uib-tab>
+	 
+	 <uib-tab heading="Service Schedule" disable="npsc.form.bi.$invalid">
+	  <div class="container-fluid" style="padding:30px;border:2px solid #e6e6e6;background-color:white;">
+	   <table class="table table-striped table-bordered">
+	    <thead><tr><th>Service</th><th>Schedule</th><th></th> </tr></thead>
+	    <tbody><tr ng-repeat="serviceSchedule in serviceScheduleL"><td>{{serviceSchedule.name}}</td><td>{{serviceSchedule.timespecStr}}</td><td><a ng-click="selectedServiceSchedule(serviceSchedule.id)"><span class="fa fa-edit" ></span></a></td></tr></tbody>
+	   </table>
+	   
+	   <div class="col-md-12" style="border:1px solid #d9d9d9;padding:15px;" ng-if="isServiceScheduleSelected">
+           <div class="col-md-12">
+		    Working Schedule &nbsp;
+		    <input id="weekly_s" type="radio" name="customSch" ng-model="sch.customSch" value="Weekly">
+		    <label for="weekly_s">Weekly</label> &nbsp;
+		    <input id="monthly_s" type="radio" name="customSch" ng-model="sch.customSch" value="Monthly">
+		    <label for="monthly_s">Monthly</label>
+		    <div class="col-md-12 no-padding" style="margin-top:15px;">
+		     <div class="col-md-12 no-padding" ng-show="sch.customSch == 'Weekly'">
+		      <div class="left-align" style="font-weight:bold">Repeat On </div>
+			  <div ng-repeat="item in daysList" class="dayItem">
+			   <input type="checkbox" id="dayItem" value="{{item.value}}" ng-checked="selectedDays.indexOf(item.id) > -1" ng-click="addDaysToSelection(item.id)"><label for="dayItem">{{item.value}}</label>
+			  </div>
+			  <div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+			   <formly-form model="npsc.details.serviceschedule" fields="npsc.weeklySchFields" form="npsc.form.serviceschedule"></formly-form>
+			   <button class="shadow-button" ng-click="addWeeklyServiceSchedule(npsc.details.serviceschedule)" style="float:right;"> Add </button>	
+			  </div>	 
+		     </div>
+		     <div class="col-md-12 no-padding" ng-show="sch.customSch == 'Monthly'">
+			  Type &nbsp;
+			  <input id="dm1" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dm">
+			  <label for="dm1">Day of the Month</label> &nbsp;
+			  <input id="dw1" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dw">
+			  <label for="dw1">Day of the Week</label>
+			  <div class="col-md-12 no-padding" ng-show="monthlyOp == 'dm'">
+			   <div class="col-md-12 no-padding" style="margin-top:8px;margin-bottom:10px;">
+			    <formly-form model="npsc.details.serviceschedule.dom" fields="npsc.sch_DOM_Fields" form="npsc.form.serviceschedule.dow"></formly-form>
+			    <button class="shadow-button" ng-click="addService_Slot_DOM(npsc.details.serviceschedule.dom)" style="float:right;">Add</button>
+			   </div>
+		      </div>
+			  <div class="col-md-12 no-padding" ng-show="monthlyOp == 'dw'">
+			   <div class="col-md-12 no-padding" style="margin-top:10px;margin-bottom:15px;">
+			    <div class="col-md-2"><input class="form-control" type="number" id="repeatNo_ServiceSchedule" ng-model="npsc.details.serviceschedule.dow.repeatNo"></div>
+			    <div class="left-align" style="font-weight:bold">Repeat on</div>
+			    <div ng-repeat="item in daysList" class="dayItem">
+			     <input type="checkbox" value="{{item.value}}" ng-checked="selectedDaysInWeek.indexOf(item.id) > -1" ng-click="addDaysToWeekSelection(item.id)"/><label for="dayItem">{{item.value}}</label>
+			    </div>
+			    <div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+			     <formly-form model="npsc.details.serviceschedule.dow" fields="npsc.sch_DOW_Fields" form="npsc.form.serviceschedule.dow"></formly-form>
+				 <button class="shadow-button" ng-click="addService_Slot_DOW(npsc.details.serviceschedule.dow)" style="float:right;">Add</button>
+			    </div>
+			   </div>	
+		      </div>
+			 </div>
+		    </div>
+		   </div>
+		    <table class="table table-striped table-bordered">
+			   <thead><tr><th>Schedules</th></tr></thead>
+			   <tbody><tr ng-repeat="timespecStr in timespecsStr_serv_sch">   
+			     <td>{{timespecStr}}</td>  
+			     <td><input type="button" value="D" ng-click="removeWeeklyServiceSchedule($index)"/></td>
+			    </tr></tbody></table>
+				 <button  class="btn btn-standard"  ng-click="doneServiceSchedule()">Done</button>
+		  </div>
+	   
+	   
+	  </div>
+	 </uib-tab>
+	 
+    </uib-tabset>
+   </div>
+   <div class="modal-footer">
+    <div class="col-sm-12">
+	 <button type="submit" class="btn btn-standard"  ng-disabled="npsc.details.form.$invalid"  ng-click="npsc.submit()">Save</button>
+	 <button  class="btn btn-standard" ng-click="close()" data-dismiss="modal">Cancel</button>
+	</div>
+   </div>
+  </div>
+ </div>
+</div>

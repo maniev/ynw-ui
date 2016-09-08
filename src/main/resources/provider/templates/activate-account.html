@@ -1,0 +1,33 @@
+<html>
+<head>
+<section class="content">
+	<div class="login-box">
+		<div class="login-box-body">
+			<p class="login-box-msg" ng-hide="danger">Set your password</p>
+			<p class="login-box-msg" ng-hide="danger"><a href="#" data-toggle="tooltip" title="***Must have atleast one uppercase letter , atleast one number and minimum 8 characters">Hint</a><br></p>
+			<div class="alert alert-success" ng-if="success">
+				<strong>{{message}}</strong>
+			</div>
+			<div class="alert alert-danger" ng-if="danger">
+				<strong>{{message}}</strong>
+			</div>
+			<formly-form model="pa.credentialInfo" fields="pa.fields" form="provider.credentials.form">
+				<button class="btn btn-primary btn-block btn-flat" ng-show="pa.fields.length>0" ng-disabled="provider.credentials.form.$invalid"
+						ng-click="pa.submit()">Save
+				</button>
+			</formly-form>
+			<!-- /.social-auth-links -->
+			 
+			<a href="#/login" class="text-center">Take me to login</a>
+		</div>
+	</div>
+</section>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/**
+* CSS for the count-down timer you must override for your own style
+*/
+
+.counter-clock {font-size:20px;}
+.counter-clock span {font-weight: bold;background-color: aquamarine}
+.counter-clock span.days{color:green}
+.counter-clock span.hours{}
+.counter-clock span.minutes{}
+.counter-clock span.seconds{}

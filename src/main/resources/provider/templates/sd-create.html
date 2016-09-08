@@ -1,0 +1,116 @@
+<div class="modal fade">
+	<div class="modal-dialog" style="min-width:50%">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Create Service Discount</h4>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-success" ng-if="success">
+				  <strong> {{message}}</strong>
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				<div class="row">
+					<formly-form model="sd.sDiscount" fields="sd.fields" form="newlabel.sd.form">
+					</formly-form>
+					<div class="col-md-12">
+						Working Schedule &nbsp;
+						<input id="weekly" type="radio" name="customSch" ng-model="sch.customSch" value="Weekly">
+						<label for="weekly">Weekly</label> &nbsp;
+						<input id="monthly" type="radio" name="customSch" ng-model="sch.customSch" value="Monthly">
+						<label for="monthly">Monthly</label>
+						<div class="col-md-12 no-padding" style="margin-top:20px;">
+							<div class="col-md-12 no-padding" ng-show="sch.customSch == 'Weekly'">
+								<div class="left-align" style="font-weight:bold">Repeat On </div>
+								<div ng-repeat="item in daysList" class="dayItem">
+									<input type="checkbox" id="dayItem" value="{{item.value}}" ng-checked="selectedDays.indexOf(item.id) > -1" ng-click="addDaysToSelection(item.id)"/>
+									<label for="dayItem">{{item.value}}</label>
+								</div>
+								<div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+									<formly-form model="sd.sDiscount" fields="sd.weeklySchFields" form="newlabel.sd.form">
+									</formly-form>
+									<button class="shadow-button" ng-click="addWeeklySchedule(sd.sDiscount)" style="float:right;"> Add </button>	
+								</div>	 
+								<table class="table table-striped table-bordered">
+									<thead>
+										<tr>
+										<th>Service Discount</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="wsch in timespec">   
+											<td>{{wsch.recurringType}} on {{wsch.repeatIntervals}}, {{wsch.startDate}} to {{wsch.terminator.endDate}},{{wsch.sTime}} to {{wsch.eTime}}</td>  
+											<td><input type="button" value="D" ng-click="removeWeeklySchedule($index)"/></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="col-md-12 no-padding" ng-show="sch.customSch == 'Monthly'">
+								Type &nbsp;
+								<input id="dm" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dm">
+								<label for="dm">Day of the Month</label> &nbsp;
+								<input id="dw" type="radio" name="monthlyOp" ng-model="monthlyOp" value="dw">
+								<label for="dw">Day of the Week</label>
+								<div class="col-md-12 no-padding" ng-show="monthlyOp == 'dm'">
+									<div class="col-md-12 no-padding" style="margin-top:8px;margin-bottom:10px;">
+										<formly-form model="sd.sDiscount" fields="sd.sch_DOM_Fields" form="newlabel.sd.form">
+										</formly-form>
+										<button class="shadow-button" ng-click="addSlot_DOM(sd.sDiscount)" style="float:right;"> Add </button>
+									</div>
+									<table class="table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Service Discount</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="dom in schedules_DOM">   
+												<td></td>  
+												<td><input type="button" value="D" ng-click="removeSlot_DOM($index)"/></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-md-12 no-padding" ng-show="monthlyOp == 'dw'">
+									<div class="col-md-12 no-padding" style="margin-top:10px;margin-bottom:15px;">
+										<div class="col-md-2"><input class="form-control" type="number"></div>
+										<div class="left-align" style="font-weight:bold">Repeat on</div>
+										<div ng-repeat="item in daysList" class="dayItem">
+											<input type="checkbox" value="{{item.value}}" ng-checked="selectedDaysInWeek.indexOf(item.id) > -1" ng-click="addDaysToWeekSelection(item.id)"/>
+											<label for="dayItem">{{item.value}}</label>
+										</div>
+										<div class="col-md-12 no-padding" style="margin-top:15px;margin-bottom:10px;">	
+											<formly-form model="sd.sDiscount" fields="sd.sch_DOW_Fields" form="newlabel.sd.form">
+											</formly-form>
+											<button class="shadow-button" ng-click="addSlot_DOW(sd.sDiscount)" style="float:right;"> Add </button>									
+										</div>
+									</div>	 
+									<table class="table table-striped table-bordered">
+										<thead>
+											<tr>
+												<th>Service Discount</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="dow in timespec">   
+												<td>{{dow.recurringType}} on {{dow.repeatIntervals}},{{dow.sTime}} to {{dow.eTime}}</td>  
+												<td><input type="button" value="D" ng-click="removeSlot_DOW($index)"/></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-standard" ng-disabled="!selected||service.sc.form.$invalid" ng-click="sc.submit(sc.serviceInfo)">Save</button>
+				<button type="submit" class="btn btn-standard" ng-click="close()" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

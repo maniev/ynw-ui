@@ -1,0 +1,31 @@
+ <div class="consumer-dynamic-data col-xs-12 no-padding">
+	<div class="header col-xs-12 no-padding">
+		<div class="logo pull-left"><a href="#" >YouNeverWait</a></div>
+		<div class="pull-right user">
+			<ul class="nav navbar-nav navbar-right" ng-if="user">
+				<li class="btn-group" uib-dropdown keyboard-nav><a>
+					<span uib-dropdown-toggle> {{user}} <span class="caret" ></span></span></a>
+					<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+						<li ui-sref-active="active"><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
+						<li ui-sref-active="active"><a href="#/change-password"><i class="fa fa-key"></i> Change Password</a></li>
+						<li ui-sref-active="active"><a href="#/logout" href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	 <div class="header-title no-padding form-bordered col-xs-12 global-bar-tab">
+		<div class="leftmenu no-padding col-xs-12 pull-left">
+			<ul>
+				<li ng-class="{current: $location.path().indexOf('/home/dashboard')!=-1}"><a
+						class="home" href="#/home/dashboard"><span>My Home</span></a>
+				</li>
+				<li ng-class="{current: $location.path().indexOf('/home/providers')!=-1}"><a
+						class="providers" href="#/home/providers"><span>My Providers</span></a>
+				</li>
+			</ul>
+		</div>
+    </div>
+	<div class="clearfix"></div>
+    <div class="nopadding" ui-view></div>
+</div>

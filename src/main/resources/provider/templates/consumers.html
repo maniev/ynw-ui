@@ -1,0 +1,89 @@
+
+<!-- <div class="col-md-4 col-lg-2 nopadding" ng-controller="ProviderLMenuCtrl">
+    <aside class="">
+        <div class="aside-nav">
+            <ul>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/today'}"><a href="#/provider/consumers/today">Today</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/tomorrow'}"><a href="#/provider/consumers/tomorrow">Tomorrow</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/week'}"><a href="#/provider/consumers/week">This week</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/past'}"><a href="#/provider/consumers/past">Past</a></li>
+            </ul>
+        </div>
+    </aside>
+</div> -->
+
+<!-- <div class="col-md-4 col-lg-2 nopadding" ng-controller="ProviderLMenuCtrl">
+    <aside class="">
+        <div class="aside-nav">
+            <ul>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/today'}"><a href="#/provider/consumers/today">Today</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/tomorrow'}"><a href="#/provider/consumers/tomorrow">Tomorrow</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/week'}"><a href="#/provider/consumers/week">This week</a></li>
+                <li ng-class="{active3: $location.path() == '/provider/consumers/past'}"><a href="#/provider/consumers/past">Past</a></li>
+            </ul>
+        </div>
+    </aside>
+</div> -->
+<div class="content" class="row">
+    <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">Customers</div>
+        <div class="service-btns service-btn-only col-sm-6 col-md-6">
+            <a href="javascript:;" ng-click="newcustomer()" class="btn btn-icon-only red btn tooltips"
+               data-placement="bottom" data-original-title="Quick Launch Button">
+                <i class="fa fa-plus"></i></a>
+			<a href="javascript:;" ng-click="assignLabel()" class="btn btn-icon-only red btn tooltips"
+               uib-tooltip="Assign label" tooltip-placement="top" tooltip-class="customClass" data-original-title="Quick Launch Button">
+                <i class="fa fa-edit"></i></a>
+        </div>
+    </div>
+	<div class="clearfix"></div>
+    <div class="nav-hidden form-bordered container">
+        <div class="col-md-12 col-lg-12 nopadding">
+            <div class="row hidden-xs list-group-title single-profile-top box-content">
+                <div class="col-border-right col-md-1" style="margin: auto">
+                    <p class="title"><span>FirstName</span></p>
+                </div>
+				<div class="col-border-right col-md-2" style="margin: auto">
+                    <p class="title"><span>LastName</span></p>
+                </div>
+				<div class="col-border-right col-md-2" style="margin: auto">
+                    <p class="title"><span>Mobile</span></p>
+                </div>
+				<div class="col-border-right col-md-4" style="margin: auto">
+                    <p class="title"><span>Email</span></p>
+                </div>
+                <div class="hidden-sm col-border-right col-md-2 style="margin: auto">
+                    <p class="title"><span>Address</span></p>
+                </div>
+                <div class="col-sm-1" >
+                    <span class="pull-right">
+                        &nbsp;
+                    </span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row list-group single-profile-top box-content" ng-repeat="row in consumers">
+				<div class="col-border-right col-md-1" style="margin: auto">
+                    <p class="title"><span>{{row.userProfile.firstName}}</span></p>
+                </div>
+				<div class="col-border-right  col-md-2" style="margin: auto">
+                    <p class="title"><span>{{row.userProfile.lastName}}</span></p>
+                </div>
+				<div class="col-border-right  col-md-2" style="margin: auto">
+                    <p class="title"><span>{{row.userProfile.primaryMobileNo}}</span></p>
+                </div>
+				<div class="col-border-right  col-md-4" style="margin: auto">
+                    <p class="title"><span>{{row.userProfile.email}}</span></p>
+                </div>
+                <div class="hidden-sm col-border-right col-md-2" style="margin: auto">
+                    <p class="title"><span>{{row.userProfile.address}}</span></p>
+                </div>
+                <div class="col-sm-1 " >
+					<span class="pull-right">  
+					   <input type="checkbox" name="chkCustomer" id="chkCustomer" ng-model="row.isSelected"/>
+					</span> 
+				</div>
+            </div>
+        </div>
+    </div>
+</div>

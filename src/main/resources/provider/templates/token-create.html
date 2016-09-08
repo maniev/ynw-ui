@@ -1,0 +1,50 @@
+<div class="modal fade" >
+	<div class="modal-dialog" style="min-width:{{tc.width}}">
+		<div class="modal-content tokenpage">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{tc.title}}</h4>
+			</div>
+			<div class="modal-body row clearfix">
+				<div class="alert alert-success" ng-if="success">
+				  <strong>{{message}}</strong> 
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				
+				<div class="col-md-12">
+					<div class="search-container">
+						<form>
+							<input class="search" type="text" ng-model="searchCustomer"  placeholder="Find customers by mobile/email/name"/>
+							<a href="javascript:;" ng-click="search()" class="btn blue tooltips"
+						   uib-tooltip="search for customer" tooltip-placement="top" tooltip-class="customClass">
+							<i class="fa fa-search"></i></a>
+						</form>
+					</div>	
+				</div>
+				<div class="col-md-12 red">
+					<p>If no customer found please create new customer by clicking 'Create Customer' button below
+				</div>
+				<div class="col-md-12">
+					<formly-form model="tc.customer" options="tc.customerfields.options" fields="tc.customerfields" form="tc.customer.form"></formly-form>
+				</div>
+				<div class="col-md-6">
+					<formly-form model="tc.service" fields="tc.servicefields" form="tc.service.form"></formly-form>
+					<div class="col-md-12">
+					<p>
+						<button class="btn btn-standard"  ng-click="">Add to Waitlist</button>
+						<button class="btn btn-standard"  ng-click="close()" >Close</button>
+						</p>
+					</div>
+					
+				</div>
+				<div class="col-sm-6">
+					<formly-form model="tc.service" fields="tc.servicefields_RO" options="tc.servicefields_RO.options" form="tc.service.ro.form"></formly-form>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

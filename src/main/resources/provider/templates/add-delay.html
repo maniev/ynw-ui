@@ -1,0 +1,45 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{wlc.title}}</h4>
+			</div>
+			<div class="modal-body row clearfix">
+				<div class="alert alert-success" ng-if="success">
+				  <strong>{{message}}</strong> 
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				
+				<div class="col-md-12">
+					<p>(hint:- Select any service or select all to change current delay) </p>
+					<table class="table table-striped table-bordered">
+						<thead><tr><th>Services</th><th>Current Delay</th>
+						<th><input type="checkbox" name="chkSeviceDelay" ng-if="wlc.serviceDelays.length>0" ng-model="chkSelectAll" ng-click="wlc.selectAllToggle(chkSelectAll)" ng-checked="wlc.checkedServicesList.length==wlc.serviceDelays.length"/></th></tr></thead>
+						<tbody><tr ng-repeat="serviceDelay in wlc.serviceDelays">   
+							<td>{{serviceDelay.name}}</td>  
+							<td>{{serviceDelay.delay}} mins</td>
+							<td><input type="checkbox" ng-checked="wlc.checkedServicesList.indexOf(serviceDelay.name)> -1" ng-click="wlc.addToCheckedList(chkSeviceDelay, serviceDelay)" name="chkSeviceDelay"/></td>
+						</tr></tbody>
+					</table>
+				</div>
+				<div class="col-md-12" ng-if="wlc.checkedServicesList.length>0">
+					<div class="" style="background-color:#ccc;padding:1px;margin-top:5px;"><h4>Adjust Delay</h4></div>
+					<div class="red">(hint:- For all New and Current waitlist customers, waitlist calculation will include this additional delay) </div>
+					<br/>
+					<div class="col-md-12">
+						<div class-"col-md-12"><p><b>Selected Services: </b>{{wlc.checkedServicesList.toString()}}</p></div>
+						<formly-form model="wlc.delayInfo" fields="wlc.fields">
+							<button class="btn btn-standard"  ng-click="adjustDelay()">Save</button>
+							<button class="btn btn-standard"  ng-click="close()" >Close</button>
+						</formly-form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

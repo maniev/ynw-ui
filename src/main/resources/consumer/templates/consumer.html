@@ -1,0 +1,24 @@
+ <div class="consumer-dynamic-data">
+    <section>
+        <div class="navbar scrollclass nomarginb menu-level-1">
+            <div class="col-md-9 col-sm-9 no-padding col-xs-12 mob-top-nav provider-top-nav">
+				<ul id="cust_menu" class="nav navbar-nav navbar-left">
+					<li ng-class="{active4: $location.path().indexOf('/home/appointments/')!=-1}"><a
+							href="#/home/appointments/upcoming"><i class="fa fa-calendar"></i> My Appointments</a>
+					</li>
+					<li ng-class="{active4: $location.path().indexOf('/home/providers')!=-1}"><a
+							href="#/home/providers"><i class="fa fa-user-md"></i> My Providers</a></li>
+				</ul>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 hidden-xs">
+                <div style="float:right; padding-top:0.5em;">
+                    <a href="javascript:;" ng-click="newappointment()" class="btn btn-icon-only red tooltips"
+                       uib-tooltip="Create Appointment" tooltip-placement="top" tooltip-class="customClass">
+                        <i class="fa fa-calendar"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="nopadding" ui-view></div><!-- 
+</div>

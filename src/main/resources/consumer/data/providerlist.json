@@ -1,0 +1,16 @@
+[
+    {
+		"id": "1",
+		"businessName":"Snow White Beauty Clinic",
+		"primaryPhoneNo":"9605551784", 
+		"address":"East-Fort Thrissur", 
+		"lastvisit":"1 day ago"
+	},
+    {
+		"id": "2",
+		"businessName":"Sagar Drug house",
+		"address":"Guruvayur",
+		"primaryPhoneNo":"9605551784",
+		"lastvisit":"2 days ago"
+	}
+]

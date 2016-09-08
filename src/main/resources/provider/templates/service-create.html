@@ -1,0 +1,37 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close()" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{{sc.title}}</h4>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-success" ng-if="success">
+				  <strong> {{message}}</strong>
+				</div>
+				<div class="alert alert-danger" ng-if="danger">
+				  <strong>{{message}}</strong>
+				</div>
+				<div class="service-form row">
+					<formly-form model="sc.serviceInfo" fields="sc.fields" form="service.sc.form">
+					</formly-form>
+				</div>
+				<!-- <div class="row">
+					<div class="col-md-5" style="margin-top:18px;margin-bottom:18px">
+						<label for="enableNotify"><input name="enableNotify" type="checkbox" ng-click="reset()" 
+							ng-model="enableNotify" id="notify">&nbsp;Enable end of service notification</label>
+					</div>
+					<div class="col-md-2" ng-show="notifyMode" ng-repeat="mode in notifications" style="margin-top:18px;margin-bottom:18px">
+						<label><input name="notifyMode" type="radio" ng-model="$parent.selected" ng-value='"{{nt.value}}"'>&nbsp;{{nt.name}}</label>
+					</div>
+				</div> -->
+			</div>
+			
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-standard" ng-disabled="service.sc.form.$invalid" ng-click="sc.submit(sc.serviceInfo)">Save</button>
+				<button type="submit" class="btn btn-standard" ng-click="close()" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

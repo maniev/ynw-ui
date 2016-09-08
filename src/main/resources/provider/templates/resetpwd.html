@@ -1,0 +1,19 @@
+<!-- Main content -->
+<section class="content">
+    <div class="login-box" style="background-color:#ccc;">
+        <div class="login-logo">
+            <a ui-sref="consumerlogin"><b>YouNeverWait</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body" style="border: 1px solid #ccc;">
+            <p class="login-box-msg">Reset your password</p>
+            <div ng-messages="rp.forms.resetform.$error">
+                <p ng-show="message" class="error" style="color:red">{{message}}</p>
+            </div>
+            <formly-form model="rp.resetpassword" fields="rp.fields" form="rp.forms.resetform">
+				<button type="submit" ng-show="rp.fields.length>0" ng-disabled="rp.forms.resetform.$invalid" class="btn btn-standard" ng-click="rp.submit()">Reset Password</button>
+			</formly-form>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+</section>

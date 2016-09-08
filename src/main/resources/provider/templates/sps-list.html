@@ -1,0 +1,62 @@
+<div class="content" class="row" ui-view>
+    <div class="header-title nav-hidden form-bordered">
+        <div class="section-head col-sm-6 col-md-6">Service Providers</div>
+        <div class="service-btns service-btn-only col-sm-6 col-md-6">
+            <a href="javascript:;" ng-click="createSP()" class="btn btn-icon-only red btn tooltips"
+               data-placement="bottom" data-original-title="Quick Launch Button">
+                <i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="nav-hidden form-bordered container">
+        <div class="col-md-12 col-lg-12 nopadding">
+            <div class="row hidden-xs list-group-title single-profile-top box-content">
+                <div class="col-border-right col-sm-2 " style="margin: auto">
+                    <p class="title"><span>Name</span>
+                </div>
+                <div class="col-sm-2 col-border-right " style="margin: auto">
+                    <p class="title"><span>Mobile</span>
+                </div>
+				<div class="col-sm-2 col-border-right " style="margin: auto">
+                    <p class="title"><span>Appointments </span>
+                </div>
+				<div class="col-sm-2 col-border-right " style="margin: auto">
+                    <p class="title"><span>Utilization[%]</span>
+                </div>
+				<div class="col-sm-2 col-border-right " style="margin: auto">
+                    <p class="title"><span>Schedule</span>
+                </div>
+                <div class="col-sm-2 " >
+                    <span class="pull-right">
+                        &nbsp;
+                    </span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row list-group single-profile-top box-content" ng-repeat="row in stafflist">
+                <div class="col-sm-2" >
+                    <p class="title"><span style="float:left" class="visible-xs">Name  :  </span><span>{{row.userProfile.firstName}} {{row.userProfile.lastName}}</span>
+                </div>
+                <div class="col-sm-2" >
+                    <p class="title"><span style="float:left" class="visible-xs"></span><span>{{row.userProfile.primaryMobileNo}}</span>
+                </div>
+				 <div class="col-sm-2" >
+                    <p class="title"><span style="float:left" class="visible-xs"></span><span></span>
+                </div>
+				 <div class="col-sm-2" >
+                    <p class="title"><span style="float:left" class="visible-xs"></span><span></span>
+                </div>
+				 <div class="col-sm-2" >
+                    <p class="title"><span style="float:left" class="visible-xs"></span><span></span>
+                </div>
+                <div class="col-sm-2 " >
+                    <span class="pull-right">
+                        <a><img src="../assets/img/icon/admin/users.png" ng-click="listconsumers(row.id)"></a>
+                        <a href="#/home/settings/business/labels/{{row.id}}"><img src="../assets/img/icon/ptb/view.png"></a>
+                        <a><img src="../assets/img/icon/ptb/delete.png" ng-click="deletelabel(row.id)"></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

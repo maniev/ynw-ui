@@ -1,0 +1,19 @@
+<section class="content">
+	<div class="login-box">
+		<div class="login-box-body">
+			<p class="login-box-msg" ng-hide="danger">Set your password</p>
+			<div class="alert alert-success" ng-if="success">
+				<strong>{{message}}</strong>
+			</div>
+			<div class="alert alert-danger" ng-if="danger">
+				<strong>{{message}}</strong>
+			</div>
+			<formly-form model="ca.credentialInfoC" fields="ca.fields" form="consumer.credentials.form">
+				<button class="btn btn-primary btn-block btn-flat" ng-show="ca.fields.length>0" ng-disabled="consumer.credentials.form.$invalid" ng-click="ca.submit()">Save
+				</button>
+			</formly-form>
+			<!-- /.social-auth-links -->
+			<a class="navigation-link" href="#/login" class="text-center">Take me to login</a>
+		</div>
+	</div>
+</section>

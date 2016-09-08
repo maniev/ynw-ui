@@ -1,0 +1,14 @@
+[
+      {
+        "name": "svm",
+        "title": "Service Manager",
+        "icon": "calendar",
+        "href": "#/home/settings/business/features/svm"
+      },
+      {
+        "name": "WM",
+        "title": "Waitlist Manager",
+        "icon": "wrench",
+        "href": "#/home/settings/business/features/wm"
+      }
+]
